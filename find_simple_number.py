@@ -1,6 +1,15 @@
-n = int(input("Введите число: "))
+N = int(input())
 
-nums = [x for x in range(2, n)]
+a = [1] * N
 
-for i in nums:
-    
+a[0] = 0
+a[1] = 0
+
+for i in range(2, int(N ** 0.5) + 1):
+    if a[i] == 1:
+        for j in range(i * i, N, i):
+            a[j] = 0
+
+for i in range(2, N):
+    if a[i] == 1:
+        print(i, end=' ')
