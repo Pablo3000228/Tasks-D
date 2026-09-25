@@ -1,19 +1,20 @@
 import random
 
-symbols = '@#$%^&*?!|'
-letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+digits = "0123456789"
+specials = "!@#$%^&*"
 
 password = []
-type_of_pass = ['letter'] * 3 + ['num'] * 3 + ['symbol'] * 2
 
-random.shuffle(type_of_pass)
+for i in range(3):
+    password.append(random.choice(letters))
 
-for s in type_of_pass:
-    if s == 'letter':
-        password.append(random.choice(letters))
-    elif s == 'num':
-        password.append(str(random.randint(0, 9)))
-    else:
-        password.append(random.choice(symbols))
+for i in range(3):
+    password.append(random.choice(digits))
 
-print(f"Password: {''.join(password)}")
+for i in range(2):
+    password.append(random.choice(specials))
+
+random.shuffle(password)
+
+print("Пароль:", ''.join(password))
