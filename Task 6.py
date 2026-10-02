@@ -14,5 +14,3 @@ number = start + (N - 1) // length
 digit = (N - 1) % length
 
 print(str(number)[digit])
-
-# Советовался с ИИ по пути решения
