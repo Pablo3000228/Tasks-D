@@ -13,4 +13,8 @@ while N > length * count:
 number = start + (N - 1) // length
 digit = (N - 1) % length
 
+<<<<<<< HEAD:Task 6.py
 print(str(number)[digit])
+=======
+print(str(number)[digit])
+>>>>>>> 503b772 (Calc & Practice #2):practice_1/Task 6.py
