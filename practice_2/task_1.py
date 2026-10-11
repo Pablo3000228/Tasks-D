@@ -17,7 +17,7 @@ Example (step = 3):
     "Hello, World!" -> "Khoor, Zruog!"
 """
 
-step = int(input('Введите шаг: '))
+step = int(input("Введите шаг: "))
 lang = input("Выберите язык (1-русский, 2-английский): ")
 text = input("Введите текст: ")
 
