@@ -97,7 +97,7 @@ def find(items, needle):
         - needle (str): поисковый запрос
 
     Returns:
-        - список названий найденных продуктов
+        list[str]: Список названий найденных продуктов.
     """
 
     res = []
@@ -118,7 +118,7 @@ def amount(items, needle):
         - needle (str): поисковый запрос
 
     Returns:
-        - res (Decimal): общее количество
+        Decimal: Общее количество.
     """
 
     res = 0

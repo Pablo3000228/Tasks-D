@@ -26,7 +26,7 @@ def ask(question, options):
         options (list): Список допустимых ответов.
 
     Returns:
-        answer (str): Ответ пользователя из списка options.
+        str: Ответ пользователя из списка options.
     """
 
     while True:
@@ -41,7 +41,7 @@ def ask_length():
     Спрашивает длину пароля от 4 до 64.
 
     Returns:
-        answer (str): Длина пароля.
+        int: Длина пароля.
     """
 
     while True:
@@ -56,11 +56,11 @@ def settings():
     Спрашивает у пользователя настройки пароля.
 
     Returns:
-        Список настроек [case, spec, numbers, length], где:
-        case (str): Регистр ("1" - верхний, "2" - нижний, "3" - оба),
-        spec (str): Спецсимволы ("1" - да, "2" - нет),
-        numbers (str): Цифры ("1" - да, "2" - нет),
-        length (int): Длина пароля.
+        list: Список настроек [case, spec, numbers, length], где
+            case (str) — регистр ("1" - верхний, "2" - нижний, "3" - оба),
+            spec (str) — спецсимволы ("1" - да, "2" - нет),
+            numbers (str) — цифры ("1" - да, "2" - нет),
+            length (int) — длина пароля.
     """
 
     print(f"\n{LINE}\n  Настройка\n{LINE}")
@@ -96,7 +96,7 @@ def generate(choice):
         choice (list): Список настроек.
 
     Returns:
-        password (str): Сгенерированный пароль.
+        str: Сгенерированный пароль.
     """
 
     case, spec, numbers, length = choice

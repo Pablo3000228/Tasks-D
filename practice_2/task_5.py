@@ -24,7 +24,7 @@ def to_roman(number: int) -> str:
         number: Число в привычном виде (обычное).
 
     Returns:
-        result: Римское число.
+        str: Римское число.
     """
     result = ""
     for value, symbol in ROMAN_TABLE:
@@ -42,7 +42,7 @@ def from_roman(roman: str) -> int:
         roman: Римское число.
 
     Returns:
-        result: Число в привычном виде (обычное).
+        int: Число в привычном виде (обычное).
     """
     result = 0
     for i, char in enumerate(roman):
