@@ -28,7 +28,7 @@ def add(items, title, amount, expiration_date=None):
     """
     Добавляет продукты в словарь items.
 
-    Parameters:
+    Args:
         - items (dict): словарь с продуктами
         - title (str): название продукта
         - amount (Decimal): количество продукта
@@ -68,7 +68,7 @@ def add_by_note(items, note):
     Добавляет продукты из текстовой записи формата
         "Название продукта Количество Дата" или "Название продукта Количество".
 
-    Parameters:
+    Args:
         - items (dict): словарь с продуктами
         - note: строка с описанием продукта
     """
@@ -81,7 +81,7 @@ def add_by_note(items, note):
 
     else:
         expiration_date = None
-        amount = pieces[-1]
+        amount = Decimal(pieces[-1])
         title = " ".join(pieces[:-1])
 
     add(items, title, amount, expiration_date)
@@ -92,7 +92,7 @@ def find(items, needle):
     Ищет продукты, название которых содержит
         поисковый запрос needle (без учёта регистра).
 
-    Parameters:
+    Args:
         - items (dict): словарь с продуктами
         - needle (str): поисковый запрос
 
@@ -108,12 +108,12 @@ def find(items, needle):
     return res
 
 
-def amount(items, needle):
+def get_amount(items, needle):
     """
     Подсчитывает общее кол-во продуктов,
         подходящих под поисковый запрос.
 
-    Parameters:
+    Args:
         - items (dict): словарь с продуктами
         - needle (str): поисковый запрос
 
@@ -123,9 +123,8 @@ def amount(items, needle):
 
     res = 0
     exist = find(items, needle)
-    if exist:
-        for product in exist:
-            needle = product
-            for k in items[needle]:
-                res += k["amount"]
+    for product in exist:
+        for k in items[product]:
+            res += k["amount"]
     return Decimal(res)
+
