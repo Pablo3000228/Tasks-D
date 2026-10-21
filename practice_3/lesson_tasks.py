@@ -1,7 +1,14 @@
 from datetime import date
+from abc import ABC, abstractmethod
 
 
-class Book:
+class Printable(ABC):
+    @abstractmethod
+    def print_info(self):
+        pass
+
+
+class Book(Printable):
     def __init__(self, title: str, author: str, year: int):
         print("Книга добавлена!")
         self.title = title
@@ -10,6 +17,9 @@ class Book:
 
     def info(self) -> str:
         return f"Название: {self.title}\nАвтор: {self.author}\nГод выпуска: {self.year}"
+
+    def print_info(self):
+        print(self.info())
 
     def __str__(self):
         return self.info()
